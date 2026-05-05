@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vinoth P | AI Engineer & Agentic AI Architect</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            cyan: '#00f5ff',
+            magenta: '#ff00ff',
+            dark: '#0a0a0a',
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { background: #050505; color: #fff; overflow-x: hidden; }
+    .glass {
+      background: rgba(255, 255, 255, 0.03);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, #00f5ff, #ff00ff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #particles {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .card-hover {
+      transition: all 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 245, 255, 0.5);
+      box-shadow: 0 10px 40px rgba(0, 245, 255, 0.1);
+    }
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 5px rgba(0, 245, 255, 0.5); }
+      50% { box-shadow: 0 0 20px rgba(0, 245, 255, 0.8); }
+    }
+    .status-badge { animation: pulse-glow 2s infinite; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease;
+    }
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .timeline-line {
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, #00f5ff, #ff00ff);
+    }
+  </style>
+</head>
+<body class="font-sans antialiased">
+  <canvas id="particles"></canvas>
+
+  <!-- Navigation -->
+  <nav class="fixed top-0 w-full z-50 glass border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="font-mono font-bold text-xl gradient-text">VP.</div>
+      <div class="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+        <a href="#about" class="hover:text-cyan transition-colors">About</a>
+        <a href="#skills" class="hover:text-cyan transition-colors">Skills</a>
+        <a href="#experience" class="hover:text-cyan transition-colors">Experience</a>
+        <a href="#projects" class="hover:text-cyan transition-colors">Projects</a>
+        <a href="#contact" class="hover:text-cyan transition-colors">Contact</a>
+      </div>
+      <a href="#contact" class="px-4 py-2 rounded-full border border-cyan/50 text-cyan text-sm hover:bg-cyan/10 transition-all">
+        Hire Me
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center justify-center relative pt-20">
+    <div class="max-w-5xl mx-auto px-6 text-center">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 status-badge">
+        <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+        <span class="text-sm font-mono text-gray-300">Open to Opportunities • Coimbatore, India</span>
+      </div>
+
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
+        <span class="block text-white">VINOTH P</span>
+        <span class="block gradient-text mt-2 font-mono text-4xl md:text-6xl" id="scramble-text">AI ENGINEER</span>
+      </h1>
+
+      <p class="text-xl md:text-2xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        Building <span class="text-cyan font-semibold">Autonomous Intelligence</span>. 
+        From <span class="text-magenta font-semibold">LLM Fine-Tuning</span> to 
+        <span class="text-cyan font-semibold">Edge Deployment</span>.
+      </p>
+
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#projects" class="px-8 py-4 rounded-full bg-gradient-to-r from-cyan to-blue-500 text-black font-bold hover:scale-105 transition-transform">
+          View My Work
+        </a>
+        <a href="https://github.com/vinoth322006" target="_blank" class="px-8 py-4 rounded-full glass text-white font-semibold hover:border-cyan/50 transition-all">
+          <i class="fab fa-github mr-2"></i> GitHub
+        </a>
+      </div>
+
+      <div class="mt-16 flex justify-center gap-8 text-gray-500 font-mono text-sm">
+        <div class="text-center">
+          <div class="text-2xl font-bold text-white">92%</div>
+          <div>LLM Accuracy</div>
+        </div>
+        <div class="w-px bg-white/10"></div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-white">10 FPS</div>
+          <div>Edge Inference</div>
+        </div>
+        <div class="w-px bg-white/10"></div>
+        <div class="text-center">
+          <div class="text-2xl font-bold text-white">5+</div>
+          <div>AI Agents Live</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 reveal">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+        <span class="text-cyan">#</span> About Me
+      </h2>
+      <div class="glass rounded-2xl p-8 md:p-12">
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          Pre-final year <span class="text-white font-semibold">B.E. AI & ML</span> engineer at Sri Krishna College of Technology (CGPA 8.19, Expected 2027). 
+          I don't just build models — I deploy them. From fine-tuning <span class="text-cyan">LLaMA-2-7B</span> with LoRA for mental health counseling 
+          to squeezing <span class="text-magenta">YOLOv5n</span> onto a Raspberry Pi via INT8 quantization, I bridge the gap between research and production.
+        </p>
+        <p class="text-lg text-gray-300 leading-relaxed">
+          Currently obsessed with <span class="text-white font-semibold">Agentic AI</span>, <span class="text-white font-semibold">MCP Servers</span>, 
+          and autonomous systems that solve real-world problems without human-in-the-loop.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 reveal">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+        <span class="text-cyan">#</span> Technical Arsenal
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass rounded-xl p-6 card-hover">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fas fa-brain text-cyan text-xl"></i>
+            <h3 class="font-bold text-lg">AI / ML Core</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm border border-cyan/20">PyTorch</span>
+            <span class="px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm border border-cyan/20">TensorFlow</span>
+            <span class="px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm border border-cyan/20">HuggingFace</span>
+            <span class="px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm border border-cyan/20">Unsloth</span>
+            <span class="px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm border border-cyan/20">LoRA / PEFT</span>
+            <span class="px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm border border-cyan/20">YOLOv8/v5</span>
+            <span class="px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm border border-cyan/20">OpenCV</span>
+            <span class="px-3 py-1 rounded-full bg-cyan/10 text-cyan text-sm border border-cyan/20">Scikit-learn</span>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl p-6 card-hover">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fas fa-robot text-magenta text-xl"></i>
+            <h3 class="font-bold text-lg">Agentic & Systems</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-magenta/10 text-magenta text-sm border border-magenta/20">MCP Servers</span>
+            <span class="px-3 py-1 rounded-full bg-magenta/10 text-magenta text-sm border border-magenta/20">FastAPI</span>
+            <span class="px-3 py-1 rounded-full bg-magenta/10 text-magenta text-sm border border-magenta/20">LLM Fine-Tuning</span>
+            <span class="px-3 py-1 rounded-full bg-magenta/10 text-magenta text-sm border border-magenta/20">Edge AI (TFLite)</span>
+            <span class="px-3 py-1 rounded-full bg-magenta/10 text-magenta text-sm border border-magenta/20">Docker</span>
+            <span class="px-3 py-1 rounded-full bg-magenta/10 text-magenta text-sm border border-magenta/20">AWS / Azure</span>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl p-6 card-hover">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fas fa-database text-green-400 text-xl"></i>
+            <h3 class="font-bold text-lg">Data & Analytics</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-green-400/10 text-green-400 text-sm border border-green-400/20">Power BI</span>
+            <span class="px-3 py-1 rounded-full bg-green-400/10 text-green-400 text-sm border border-green-400/20">Tableau</span>
+            <span class="px-3 py-1 rounded-full bg-green-400/10 text-green-400 text-sm border border-green-400/20">Pandas</span>
+            <span class="px-3 py-1 rounded-full bg-green-400/10 text-green-400 text-sm border border-green-400/20">NumPy</span>
+            <span class="px-3 py-1 rounded-full bg-green-400/10 text-green-400 text-sm border border-green-400/20">SQL</span>
+            <span class="px-3 py-1 rounded-full bg-green-400/10 text-green-400 text-sm border border-green-400/20">ETL Pipelines</span>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl p-6 card-hover">
+          <div class="flex items-center gap-3 mb-4">
+            <i class="fas fa-code text-yellow-400 text-xl"></i>
+            <h3 class="font-bold text-lg">Languages</h3>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1 rounded-full bg-yellow-400/10 text-yellow-400 text-sm border border-yellow-400/20">Python</span>
+            <span class="px-3 py-1 rounded-full bg-yellow-400/10 text-yellow-400 text-sm border border-yellow-400/20">SQL</span>
+            <span class="px-3 py-1 rounded-full bg-yellow-400/10 text-yellow-400 text-sm border border-yellow-400/20">C++</span>
+            <span class="px-3 py-1 rounded-full bg-yellow-400/10 text-yellow-400 text-sm border border-yellow-400/20">Java</span>
+            <span class="px-3 py-1 rounded-full bg-yellow-400/10 text-yellow-400 text-sm border border-yellow-400/20">JavaScript</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="py-20 reveal">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+        <span class="text-cyan">#</span> Experience
+      </h2>
+
+      <div class="relative pl-8">
+        <div class="timeline-line"></div>
+        <div class="relative">
+          <div class="absolute -left-[21px] top-2 w-4 h-4 rounded-full bg-dark border-2 border-cyan shadow-[0_0_15px_rgba(0,245,255,0.8)]"></div>
+          <div class="glass rounded-xl p-6 card-hover mb-8">
+            <div class="flex flex-wrap justify-between items-start mb-2">
+              <h3 class="text-xl font-bold text-white">Data Scientist Intern</h3>
+              <span class="text-sm font-mono text-cyan bg-cyan/10 px-3 py-1 rounded-full">Feb 2025 – Mar 2025</span>
+            </div>
+            <div class="text-magenta font-semibold mb-3">Postulate Info Tech Private Limited, Coimbatore</div>
+            <ul class="space-y-2 text-gray-300">
+              <li class="flex items-start gap-2">
+                <i class="fas fa-chevron-right text-cyan text-xs mt-1.5"></i>
+                <span>Architected real-time <span class="text-white font-semibold">YOLOv8</span> object detection pipeline for road safety, evaluating mAP, precision, recall, and ROC-AUC on large-scale datasets.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-chevron-right text-cyan text-xs mt-1.5"></i>
+                <span>Built ensemble <span class="text-white font-semibold">ML/DL</span> models (Logistic Regression, SVM, Random Forest, CNN, ANN) for Breast Cancer & Parkinson's prediction.</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <i class="fas fa-chevron-right text-cyan text-xs mt-1.5"></i>
+                <span>Implemented <span class="text-white font-semibold">Neural Style Transfer</span> and end-to-end ML workflows using TensorFlow, Keras, and Scikit-learn.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="py-20 reveal">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+        <span class="text-cyan">#</span> Featured Projects
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass rounded-xl overflow-hidden card-hover group">
+          <div class="h-2 bg-gradient-to-r from-cyan to-blue-500"></div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-cyan transition-colors">MindfulChat</h3>
+              <span class="text-xs px-2 py-1 rounded bg-cyan/20 text-cyan border border-cyan/30">LLM</span>
+            </div>
+            <p class="text-sm font-mono text-gray-400 mb-3">Unsloth • LLaMA-2-7B • LoRA • PEFT</p>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Fine-tuned empathetic mental health advisor using LoRA + Unsloth. Achieved <span class="text-white font-bold">92% accuracy</span> on domain Q&A with fully local inference — zero API costs, full privacy.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl overflow-hidden card-hover group">
+          <div class="h-2 bg-gradient-to-r from-magenta to-purple-500"></div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-magenta transition-colors">EdgeSign Detection</h3>
+              <span class="text-xs px-2 py-1 rounded bg-magenta/20 text-magenta border border-magenta/30">Edge AI</span>
+            </div>
+            <p class="text-sm font-mono text-gray-400 mb-3">YOLOv5n • TensorFlow Lite • Raspberry Pi 4</p>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Optimized YOLOv5n via INT8 quantization for edge deployment. Delivers <span class="text-white font-bold">10 FPS</span> at <span class="text-white font-bold">88% mAP</span> on Indian traffic sign dataset — zero cloud dependency.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl overflow-hidden card-hover group">
+          <div class="h-2 bg-gradient-to-r from-green-400 to-emerald-500"></div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-green-400 transition-colors">Unstop MCP Server</h3>
+              <span class="text-xs px-2 py-1 rounded bg-green-400/20 text-green-400 border border-green-400/30">MCP</span>
+            </div>
+            <p class="text-sm font-mono text-gray-400 mb-3">FastAPI • MCP Protocol • Python SDK</p>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Built an MCP server leveraging Unstop public APIs for contest discovery and analytics. Enables any MCP-compatible AI assistant to query live data via standardized protocol.
+            </p>
+          </div>
+        </div>
+
+        <div class="glass rounded-xl overflow-hidden card-hover group">
+          <div class="h-2 bg-gradient-to-r from-yellow-400 to-orange-500"></div>
+          <div class="p-6">
+            <div class="flex justify-between items-start mb-3">
+              <h3 class="text-xl font-bold text-white group-hover:text-yellow-400 transition-colors">Partnership AI Agent</h3>
+              <span class="text-xs px-2 py-1 rounded bg-yellow-400/20 text-yellow-400 border border-yellow-400/30">Agent</span>
+            </div>
+            <p class="text-sm font-mono text-gray-400 mb-3">LLM • Agentic AI • Published</p>
+            <p class="text-gray-300 text-sm leading-relaxed mb-4">
+              Published AI agent generating ranked partnership strategies with probability scores, advertising tactics, and profit insights. Built & deployed at Agent Build Day 2025, HackerEarth.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Achievements -->
+  <section class="py-20 reveal">
+    <div class="max-w-5xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-12 flex items-center gap-3">
+        <span class="text-cyan">#</span> Achievements & Certs
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <i class="fas fa-certificate text-3xl text-cyan mb-3"></i>
+          <h3 class="font-bold text-white mb-1">Design Patent</h3>
+          <p class="text-xs text-gray-400">No. 421785-002<br>Baby chair with airbag safety</p>
+        </div>
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <i class="fas fa-trophy text-3xl text-yellow-400 mb-3"></i>
+          <h3 class="font-bold text-white mb-1">2nd Place</h3>
+          <p class="text-xs text-gray-400">Generative AI Project Expo<br>50+ competing teams</p>
+        </div>
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <i class="fas fa-robot text-3xl text-magenta mb-3"></i>
+          <h3 class="font-bold text-white mb-1">5 AI Agents</h3>
+          <p class="text-xs text-gray-400">Published at Agent Build Day 2025<br>HackerEarth & Agent.ai</p>
+        </div>
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <i class="fas fa-cloud text-3xl text-blue-400 mb-3"></i>
+          <h3 class="font-bold text-white mb-1">NPTEL Elite + Silver</h3>
+          <p class="text-xs text-gray-400">Cloud Computing<br>Top 7% of 10,000+</p>
+        </div>
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <i class="fas fa-database text-3xl text-green-400 mb-3"></i>
+          <h3 class="font-bold text-white mb-1">NPTEL Topper + Gold</h3>
+          <p class="text-xs text-gray-400">Big Data Computing<br>Top performer</p>
+        </div>
+        <div class="glass rounded-xl p-5 text-center card-hover">
+          <i class="fas fa-medal text-3xl text-purple-400 mb-3"></i>
+          <h3 class="font-bold text-white mb-1">Certifications</h3>
+          <p class="text-xs text-gray-400">Salesforce Agentforce Specialist<br>Microsoft Azure AZ-900</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Open Source -->
+  <section class="py-20 reveal">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+        <span class="text-cyan">#</span> Open Source
+      </h2>
+      <div class="glass rounded-xl p-8 flex flex-col md:flex-row gap-6 items-center">
+        <div class="w-16 h-16 rounded-full bg-gradient-to-br from-cyan to-blue-500 flex items-center justify-center text-2xl font-bold text-black">T</div>
+        <div class="flex-1">
+          <h3 class="text-xl font-bold text-white mb-1">TechiesLog</h3>
+          <p class="text-sm font-mono text-cyan mb-2">Flutter • Dart • Provider • MIT License</p>
+          <p class="text-gray-300 text-sm">
+            Privacy-first, offline productivity & personal finance tracker. Expense tracking, task management, goal setting, and analytics. Zero ads. Zero tracking. Complete APK release.
+          </p>
+        </div>
+        <a href="https://github.com/vinoth322006/techieslog" target="_blank" class="px-6 py-3 rounded-full border border-cyan/50 text-cyan hover:bg-cyan/10 transition-all whitespace-nowrap">
+          <i class="fab fa-github mr-2"></i> View Repo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Leadership -->
+  <section class="py-20 reveal">
+    <div class="max-w-4xl mx-auto px-6">
+      <h2 class="text-3xl font-bold mb-8 flex items-center gap-3">
+        <span class="text-cyan">#</span> Leadership & Impact
+      </h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="glass rounded-xl p-6 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fas fa-university text-cyan text-xl"></i>
+            <h3 class="font-bold text-white">Campus Ambassador</h3>
+          </div>
+          <p class="text-sm text-gray-400 mb-2">IIT Bombay</p>
+          <p class="text-gray-300 text-sm">Increased event participation by 20% through targeted outreach campaigns and student engagement strategies.</p>
+        </div>
+        <div class="glass rounded-xl p-6 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fas fa-lightbulb text-magenta text-xl"></i>
+            <h3 class="font-bold text-white">Innovation Council</h3>
+          </div>
+          <p class="text-sm text-gray-400 mb-2">Institution's Innovation Council (IIC)</p>
+          <p class="text-gray-300 text-sm">Organized research methodology workshops for peers, fostering a culture of innovation and evidence-based problem solving.</p>
+        </div>
+        <div class="glass rounded-xl p-6 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fas fa-chalkboard-teacher text-green-400 text-xl"></i>
+            <h3 class="font-bold text-white">Peer Tutor</h3>
+          </div>
+          <p class="text-sm text-gray-400 mb-2">Weekly Sessions</p>
+          <p class="text-gray-300 text-sm">Conducted weekly Python & ML sessions for junior undergraduates, accelerating their journey into data science and AI.</p>
+        </div>
+        <div class="glass rounded-xl p-6 card-hover">
+          <div class="flex items-center gap-3 mb-3">
+            <i class="fas fa-heart text-red-400 text-xl"></i>
+            <h3 class="font-bold text-white">Volunteering</h3>
+          </div>
+          <p class="text-sm text-gray-400 mb-2">U&I Organization • Wheels on Bot</p>
+          <p class="text-gray-300 text-sm">Taught underprivileged students English weekly at Don Bosco Illam. Mentored IoT enthusiasts at Wheels on Bot, Batch 2.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="py-20 reveal">
+    <div class="max-w-3xl mx-auto px-6 text-center">
+      <h2 class="text-3xl font-bold mb-6">Let's Build the Future Together</h2>
+      <p class="text-gray-400 mb-10">Open for AI/ML Engineering, Data Science, and Agentic AI opportunities.</p>
+
+      <div class="flex flex-wrap justify-center gap-4 mb-12">
+        <a href="mailto:vinoth322006@gmail.com" class="px-6 py-3 rounded-full glass text-white hover:border-cyan/50 transition-all">
+          <i class="fas fa-envelope mr-2 text-cyan"></i> vinoth322006@gmail.com
+        </a>
+        <a href="tel:+919500395466" class="px-6 py-3 rounded-full glass text-white hover:border-cyan/50 transition-all">
+          <i class="fas fa-phone mr-2 text-cyan"></i> +91 95003 95466
+        </a>
+      </div>
+
+      <div class="flex justify-center gap-6 text-2xl">
+        <a href="https://linkedin.com/in/vinoth-p-a41770290" target="_blank" class="text-gray-400 hover:text-cyan transition-colors"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/vinoth322006" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+        <a href="https://leetcode.com/vinoth322006" target="_blank" class="text-gray-400 hover:text-yellow-400 transition-colors"><i class="fas fa-code"></i></a>
+        <a href="https://x.com/vinocosmo" target="_blank" class="text-gray-400 hover:text-white transition-colors"><i class="fab fa-x-twitter"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5 py-8 text-center text-gray-500 text-sm">
+    <p>© 2026 Vinoth P. Crafted with code & curiosity.</p>
+  </footer>
+
+  <script>
+    // Particle Network Animation
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    let width, height;
+    let particles = [];
+
+    function resize() {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resize);
+    resize();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.vx = (Math.random() - 0.5) * 0.5;
+        this.vy = (Math.random() - 0.5) * 0.5;
+        this.size = Math.random() * 2;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > width) this.vx *= -1;
+        if (this.y < 0 || this.y > height) this.vy *= -1;
+      }
+      draw() {
+        ctx.fillStyle = 'rgba(0, 245, 255, 0.5)';
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    for (let i = 0; i < 50; i++) particles.push(new Particle());
+
+    function animate() {
+      ctx.clearRect(0, 0, width, height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+        particles.forEach(p2 => {
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx*dx + dy*dy);
+          if (dist < 150) {
+            ctx.strokeStyle = `rgba(0, 245, 255, ${0.1 * (1 - dist/150)})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        });
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // Scroll Reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealOnScroll = () => {
+      reveals.forEach(el => {
+        const windowHeight = window.innerHeight;
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add('active');
+        }
+      });
+    };
+    window.addEventListener('scroll', revealOnScroll);
+    revealOnScroll();
+
+    // Text Scramble Effect
+    class TextScramble {
+      constructor(el) {
+        this.el = el;
+        this.chars = '!<>-_\\/[]{}—=+*^?#________';
+        this.update = this.update.bind(this);
+      }
+      setText(newText) {
+        const oldText = this.el.innerText;
+        const length = Math.max(oldText.length, newText.length);
+        const promise = new Promise((resolve) => this.resolve = resolve);
+        this.queue = [];
+        for (let i = 0; i < length; i++) {
+          const from = oldText[i] || '';
+          const to = newText[i] || '';
+          const start = Math.floor(Math.random() * 40);
+          const end = start + Math.floor(Math.random() * 40);
+          this.queue.push({ from, to, start, end });
+        }
+        cancelAnimationFrame(this.frameRequest);
+        this.frame = 0;
+        this.update();
+        return promise;
+      }
+      update() {
+        let output = '';
+        let complete = 0;
+        for (let i = 0, n = this.queue.length; i < n; i++) {
+          let { from, to, start, end, char } = this.queue[i];
+          if (this.frame >= end) {
+            complete++;
+            output += to;
+          } else if (this.frame >= start) {
+            if (!char || Math.random() < 0.28) {
+              char = this.randomChar();
+              this.queue[i].char = char;
+            }
+            output += `<span class="text-cyan">${char}</span>`;
+          } else {
+            output += from;
+          }
+        }
+        this.el.innerHTML = output;
+        if (complete === this.queue.length) {
+          this.resolve();
+        } else {
+          this.frameRequest = requestAnimationFrame(this.update);
+          this.frame++;
+        }
+      }
+      randomChar() {
+        return this.chars[Math.floor(Math.random() * this.chars.length)];
+      }
+    }
+
+    const el = document.getElementById('scramble-text');
+    const fx = new TextScramble(el);
+    let counter = 0;
+    const phrases = [
+      'AI ENGINEER',
+      'LLM ARCHITECT',
+      'EDGE AI DEVELOPER',
+      'AGENTIC AI BUILDER'
+    ];
+    const next = () => {
+      fx.setText(phrases[counter]).then(() => {
+        setTimeout(next, 2000);
+      });
+      counter = (counter + 1) % phrases.length;
+    };
+    next();
+  </script>
+</body>
+</html>
